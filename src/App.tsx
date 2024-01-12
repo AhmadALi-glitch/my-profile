@@ -1,5 +1,7 @@
 import './App.css';
-import { PersonalPhoto } from './components/PersonalPhoto';
+import PersonalPhoto from './components/PersonalPhoto';
+import TopicDescriptionPhrase from './components/TopicDescriptionPhrase';
+import ContactMe from './components/ContactMe';
 
 /*
 
@@ -11,6 +13,16 @@ import { PersonalPhoto } from './components/PersonalPhoto';
 
   todo: 4. create personal photo component and design it
 
+  todo: 5. import fonts and icons libraries
+
+  todo: 6. design photo side responsively
+        |
+        todo: 6.1 set screen sized configurations -- done
+        todo: 6.2 height of the 2 sides (photo, description)
+        todo: 6.3 photo
+        todo: 6.4 describe phrase
+        todo: 6.5 contact icons 
+
 */
 
 function App() {
@@ -18,23 +30,28 @@ function App() {
   return (
     <>
       {/* main container */}
-      <div className=' bg-secondary pt-3 pr-3 pl-3 pb-3 w-screen h-screen'>
+      <div className='bg-secondary pt-3 pr-3 pl-3 pb-3 w-screen h-screen'>
 
         {/* inner container */}
-        <div className=" shadow-flat h-full w-full overflow-hidden rounded-md flex items-center flex-col md:flex-row text-black">
+        <div className="shadow-flat h-full w-full rounded-md flex items-center flex-col md:flex-row text-black">
 
           {/* photo side*/}
-          <div className='basis-[25%] md:basis-[30%] w-full h-full flex flex-row md:flex-col bg-primary'>
+          <div className='xsm:basis-[16%] sm:basis-[25%] md:basis-[30%] w-full h-full flex flex-row md:flex-col bg-primary'>
 
-            <div className="basis-[50%] flex justify-center items-center overflow-hidden">
+            <div className="xsm:basis-[25%] sm:basis-[25%] md:basis-[50%] flex justify-center items-center">
               <PersonalPhoto />
             </div>
 
-            <div className=" basis-[35%] pl-6 pt-2">
-              <h1 className='md:text-7xl text-5xl font-classic text-primary'>I Love My Career</h1>
-            </div>
+            <div className="xsm:basis-[75%] sm:basis-[75%] md:basis-[50%] flex flex-col xsm:justify-start xsm:items-start md:justify-between">
 
-            <div className="basis-[15%]">
+              <div className="basis-[60%] xsm:pt-2 pr-3 xsm:pl-2">
+                <TopicDescriptionPhrase />
+              </div>
+
+              <div className="basis-[45%] xsm:pr-2 flex items-end justify-end w-full pb-2">
+                <ContactMe />
+              </div>
+
             </div>
 
           </div>
@@ -44,7 +61,7 @@ function App() {
 
           {/* topics */}
           <div className='basis-[65%] bg-secondary w-full h-full'>
-            <h1 className="text-secondary font-handwritten pl-2 pt-11 text-8xl">About Me :</h1>
+            <h1 className="text-secondary font-handwritten pl-2 pt-11 text-8xl"></h1>
           </div>
 
         </div>
