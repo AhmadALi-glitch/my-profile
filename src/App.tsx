@@ -1,4 +1,5 @@
 import './App.css';
+import { PersonalPhoto } from './components/PersonalPhoto';
 
 /*
 
@@ -6,7 +7,9 @@ import './App.css';
 
   todo: 2. create the separator line between the two components . and handle it's (height, width) reponsively
 
-  todo: 3.  customize theme colors in tailwind.config.js
+  todo: 3. customize theme colors in tailwind.config.js
+
+  todo: 4. create personal photo component and design it
 
 */
 
@@ -18,12 +21,28 @@ function App() {
       <div className=' bg-secondary pt-3 pr-3 pl-3 pb-3 w-screen h-screen'>
 
         {/* inner container */}
-        <div className="bg-primary shadow-flat h-full w-full overflow-hidden rounded-md flex items-center flex-col md:flex-row text-black">
+        <div className=" shadow-flat h-full w-full overflow-hidden rounded-md flex items-center flex-col md:flex-row text-black">
 
-          <div className='basis-[25%] md:basis-[35%] w-full h-full'>
-            <h1 className="text-primary text-8xl">PRIMARY TEXT COLOR</h1>
+          {/* photo side*/}
+          <div className='basis-[25%] md:basis-[30%] w-full h-full flex flex-row md:flex-col bg-primary'>
+
+            <div className="basis-[50%] flex justify-center items-center overflow-hidden">
+              <PersonalPhoto />
+            </div>
+
+            <div className=" basis-[35%] pl-6 pt-2">
+              <h1 className='md:text-7xl text-5xl'>I Love My Career</h1>
+            </div>
+
+            <div className="basis-[15%]">
+            </div>
+
           </div>
+
+          {/* separator */}
           <div className='basis-[0.2%] bg-secondary size-full'></div> 
+
+          {/* topics */}
           <div className='basis-[65%] bg-secondary w-full h-full'>
             <h1 className="text-secondary text-8xl">SECONDARY TEXT COLOR</h1>
           </div>
