@@ -22,6 +22,10 @@ export default {
     },
     backgroundImage: {
       'diagonal-pattern': 'repeating-linear-gradient( -45deg, #00A676, #00A676 5px, transparent 5px, transparent 25px )'
+    },
+    fontFamily: {
+      'classic': 'Cinzel',
+      'handwritten': 'Caveat'
     }
   },
   plugins: [],

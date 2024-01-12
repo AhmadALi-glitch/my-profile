@@ -31,7 +31,7 @@ function App() {
             </div>
 
             <div className=" basis-[35%] pl-6 pt-2">
-              <h1 className='md:text-7xl text-5xl'>I Love My Career</h1>
+              <h1 className='md:text-7xl text-5xl font-classic text-primary'>I Love My Career</h1>
             </div>
 
             <div className="basis-[15%]">
@@ -44,7 +44,7 @@ function App() {
 
           {/* topics */}
           <div className='basis-[65%] bg-secondary w-full h-full'>
-            <h1 className="text-secondary text-8xl">SECONDARY TEXT COLOR</h1>
+            <h1 className="text-secondary font-handwritten pl-2 pt-11 text-8xl">About Me :</h1>
           </div>
 
         </div>
