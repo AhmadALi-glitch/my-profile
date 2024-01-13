@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faFacebook, faTelegram, faWhatsapp, faGithub } from "@fortawesome/free-brands-svg-icons";
+import { faFacebook, faTelegram, faWhatsapp, faGithub, faDev } from "@fortawesome/free-brands-svg-icons";
 
 export default function() {
     return(
@@ -9,6 +9,7 @@ export default function() {
                 <FontAwesomeIcon className="xsm:text-2xl sm:text-4xl" icon={faTelegram} color="teal" />
                 <FontAwesomeIcon className="xsm:text-2xl sm:text-4xl" icon={faWhatsapp} color="green" />
                 <FontAwesomeIcon className="xsm:text-2xl sm:text-4xl" icon={faGithub} color="black" />
+                <FontAwesomeIcon className="xsm:text-2xl sm:text-4xl" icon={faDev} color="black" />
             </div>
         </>
     )

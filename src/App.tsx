@@ -144,7 +144,7 @@ function App() {
           </div>
 
           {/* sections */}
-          <div ref={sectionsRef} className='bg-secondary scroll-smooth snap-y snap-mandatory basis-[100%] pl-4 pt-5 w-full h-full overflow-auto'>
+          <div ref={sectionsRef} className='bg-secondary scroll-smooth snap-y snap-mandatory basis-[100%] pl-4 pt-4 pt-5 w-full h-full overflow-auto'>
 
             <div ref={aboutMeRef}  className="h-fit min-h-full snap-center pt-20">
               <AboutMe />

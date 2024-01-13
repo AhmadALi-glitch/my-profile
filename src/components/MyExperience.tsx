@@ -73,7 +73,6 @@ export default function() {
                 }}>
 
                     and professional in working in vuejs
-                    <FontAwesomeIcon icon={faVuejs} size="xs" className="pt-2 pl-2 relative" />
 
                 </div>
  
