@@ -13,7 +13,8 @@ export default {
     },
     backgroundColor: {
       'primary': '#F1E8B8',
-      'secondary': '#00A676'
+      'secondary': '#00a676',
+      'side': '#eee'
     },
     boxShadow: {
       'flat': 'rgba(0, 0, 0, 0.1) 0px 0px 5px 0px, rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;',
@@ -21,7 +22,8 @@ export default {
       'soft': 'rgba(0, 0, 0, 0.1) 0px 1px 2px 0px;'
     },
     backgroundImage: {
-      'diagonal-pattern': 'repeating-linear-gradient( -45deg, #00A676, #00A676 5px, transparent 5px, transparent 25px )'
+      'diagonal-pattern': 'repeating-linear-gradient( -45deg, #00A676, #00A676 5px, transparent 5px, transparent 25px )',
+      'primary-diagonal-pattern': 'repeating-linear-gradient( 90deg, #F1E8B8, #F1E8B8 1px, transparent 1px, transparent 25px )'
     },
     fontFamily: {
       'classic': 'Cinzel',
@@ -34,7 +36,7 @@ export default {
       'sm': '640px',
       // => @media (min-width: 640px) { ... }
 
-      'md': '768px',
+      'md': '868px',
       // => @media (min-width: 768px) { ... }
 
       'lg': '1024px',
