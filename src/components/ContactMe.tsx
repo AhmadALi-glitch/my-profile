@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faFacebook, faTelegram, faWhatsapp, faGithub, faDev, faLinkedin } from "@fortawesome/free-brands-svg-icons";
+import { faFacebook, faGithub, faDev, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 
 export default function() {
 
