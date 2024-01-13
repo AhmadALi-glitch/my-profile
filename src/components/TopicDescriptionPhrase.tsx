@@ -1,6 +1,6 @@
 
 
-export default function({ sectionsState }) {
+export default function({ sectionState }) {
 
     const phrases = [
         'I Love My Job',
@@ -13,7 +13,7 @@ export default function({ sectionsState }) {
     return(
         <>
             <div className='transition ease-in-out subpixel-antialiased xsm:text-2xl sm:text-5xl md:text-6xl text-5xl font-classic text-primary'>
-                {phrases[sectionsState]}
+                {phrases[sectionState]}
             </div>
         </>
     )

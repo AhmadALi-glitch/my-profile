@@ -6,8 +6,11 @@ import AboutMe from './components/AboutMe';
 import MyExperience from './components/MyExperience';
 
 import { useInView } from 'react-intersection-observer';
-import { useScroll, animated, useSpring } from '@react-spring/web'
-import { Ref, useEffect, useRef } from 'react';
+import { animated } from '@react-spring/web'
+import { useEffect, useRef } from 'react';
+import Readings from './components/Readings';
+import NextPlan from './components/NextPlan';
+import Interests from './components/Interests';
 
 /*
 
@@ -52,30 +55,13 @@ function App() {
 
   const { ref: aboutMeRef, inView: aboutMeSectionVisibility, entry: aboutMeSectionEntry } = useInView({threshold: 0.1, initialInView: true});
 
-  const { ref: myExperienceRef, inView: myExperienceSectionVisibility, entry: myExperienceSectionEntry } = useInView({threshold: 0., initialInView: false});
+  const { ref: myExperienceRef, inView: myExperienceSectionVisibility, entry: myExperienceSectionEntry } = useInView({threshold: 0.1, initialInView: false});
   
   const { ref: readingsRef, inView: readingsSectionVisibility, entry: readingsSectionEntry } = useInView({threshold: 0.1, initialInView: false});
   
   const { ref: nextPlanRef, inView: nextPlanSectionVisibility, entry: nextPlanSectioEntry } = useInView({threshold: 0.1, initialInView: false});
   
   const { ref: interestsRef, inView: interestesSectionVisibility, entry: interestesSectionEntry } = useInView({threshold: 0.1, initialInView: false});
-
-  // storing the scrollY State in the parent component
-  // const {scrollYProgress} = useScroll({
-  //   onChange:({value}) => {
-  //     console.log("result on rest : ", value);
-  //     if(value.scrollYProgress > 0.25) {
-  //       scrollY.current = 1;
-  //     } else {
-  //       scrollY.current = 0;
-  //     }
-  //   },
-  //   default: {
-  //     immediate: true,
-  //   },
-  //   container: sectionsRef
-  // })
-
 
   const scrollYProgress = useRef(SECTIONS.ABOUT_ME);
 
@@ -93,7 +79,7 @@ function App() {
 
   useEffect(() => {
     if(nextPlanSectionVisibility) {
-      scrollYProgress.current = SECTIONS.ABOUT_ME;
+      scrollYProgress.current = SECTIONS.NEXT_PLAN;
     }
   }, [nextPlanSectionVisibility])
 
@@ -105,10 +91,9 @@ function App() {
 
   useEffect(() => {
     if(interestesSectionVisibility) {
-      scrollYProgress.current = SECTIONS.ABOUT_ME;
+      scrollYProgress.current = SECTIONS.INTERESTS;
     }
   }, [interestesSectionVisibility])
-
   
   return (
     <>
@@ -119,7 +104,7 @@ function App() {
         <div className="shadow-flat h-full w-full overflow-hidden rounded-md flex items-center flex-col md:flex-row text-black">
 
           {/* photo side*/}
-          <div className='xsm:basis-[25%]  sm:basis-[30%] md:basis-[50%] w-full h-full flex flex-row md:flex-col bg-primary'>
+          <div className='xsm:basis-[25%]  sm:basis-[30%] md:basis-[50%] md:min-w-96 w-full h-full flex flex-row md:flex-col bg-primary'>
 
             <div className="xsm:basis-[25%] sm:basis-[25%] md:basis-[50%] flex justify-center items-center">
               <PersonalPhoto />
@@ -128,7 +113,7 @@ function App() {
             <div className="xsm:basis-[75%] sm:basis-[75%] md:basis-[50%] flex flex-col xsm:justify-start xsm:items-start md:justify-between">
 
               <div className="basis-[60%] xsm:pt-2 pr-3 xsm:pl-2">
-                <TopicDescriptionPhrase sectionsState={scrollYProgress.current} />
+                <TopicDescriptionPhrase sectionState={scrollYProgress.current} />
               </div>
 
               <div className="basis-[45%] xsm:pr-2 flex items-end justify-end w-full pb-2">
@@ -140,22 +125,46 @@ function App() {
           </div>
 
           {/* separator */}
-          <div className='basis-20 bg-side size-full md:pt-14 md:pb-14 flex items-center justify-around md:flex-col md:gap-40'>
-            <div className="creative md:rotate-90 ">creative</div>
-            <div className="creative md:rotate-90 ">productive</div>
-            <div className="creative md:rotate-90 ">reader</div>
-            <div className="creative md:rotate-90 ">visioner</div>
+          <div className="basis-13 overflow-hidden" >
+
+            <animated.div
+              style={{
+                backgroundPosition: "top",
+                backgroundColor: "white"
+              }}
+              className='basis-10 size-full md:pt-14 md:pb-14 flex items-center justify-around md:flex-col md:gap-32 xsm:gap-6 xsm:p-3 md:p-0 xsm:text-sm sm:text-2xl font-handwritten text-4xl'
+            >
+
+              <div className="creative md:rotate-90">Creative</div>
+              <div className="creative md:rotate-90 ">Productive</div>
+              <div className="creative md:rotate-90 font-classic">Reader</div>
+              <div className="creative md:rotate-90 ">Visioner</div>
+
+            </animated.div>
+
           </div>
 
-          {/* topics */}
+          {/* sections */}
           <div ref={sectionsRef} className='bg-secondary scroll-smooth snap-y snap-mandatory basis-[100%] pl-4 pt-5 w-full h-full overflow-auto'>
 
-            <div ref={aboutMeRef}  className="h-dvh snap-center pt-20">
+            <div ref={aboutMeRef}  className="h-fit min-h-full snap-center pt-20">
               <AboutMe />
             </div>
 
-            <div ref={myExperienceRef} className='h-dvh snap-center  pt-20'>
+            <div ref={myExperienceRef} className='h-fit min-h-full snap-center  pt-20'>
               <MyExperience />
+            </div>
+
+            <div ref={readingsRef} className='h-fit snap-center min-h-full  pt-20'>
+              <Readings />
+            </div>
+
+            <div ref={nextPlanRef} className='h-fit snap-center min-h-full  pt-20'>
+              <NextPlan />
+            </div>
+
+            <div ref={interestsRef} className='h-fit snap-center min-h-full pt-20'>
+              <Interests />
             </div>
 
           </div>
