@@ -30,7 +30,7 @@ export default function({ sectionState }: { sectionState: number }) {
 
     return(
         <>
-            <div className='transition ease-in-out subpixel-antialiased xsm:text-2xl sm:text-5xl md:text-6xl text-5xl font-classic text-primary realtive'>
+            <div className='transition ease-in-out subpixel-antialiased xsm:text-3xl sm:text-5xl md:text-6xl text-5xl font-classic text-primary realtive'>
                 {
                     phrases.map((phrase, phraseIndex) => {
                         return <div key={phraseIndex}>
@@ -44,7 +44,3 @@ export default function({ sectionState }: { sectionState: number }) {
         </>
     )
 }
-
-// todo: show just identical phrase with the section viewed
-// todo: hide the not identical
-// todo: on show trigger an animation (on sections state changes) 

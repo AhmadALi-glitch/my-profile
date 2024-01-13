@@ -1,4 +1,3 @@
-import './App.css';
 import PersonalPhoto from './components/PersonalPhoto';
 import TopicDescriptionPhrase from './components/TopicDescriptionPhrase';
 import ContactMe from './components/ContactMe';
@@ -12,34 +11,7 @@ import Readings from './components/Readings';
 import NextPlan from './components/NextPlan';
 import Interests from './components/Interests';
 
-/*
-
-  todo: 1. create responsive container for 2 sizes : large and small under App Component inside of it create 2 components . side for the picture compoennt . another is for info component . percentage is 35% for 65%
-
-  todo: 2. create the separator line between the two components . and handle it's (height, width) reponsively
-
-  todo: 3. customize theme colors in tailwind.config.js
-
-  todo: 4. create personal photo component and design it
-
-  todo: 5. import fonts and icons libraries
-
-  todo: 6. design photo side responsively
-        |
-        todo: 6.1 set screen sized configurations -- done
-        todo: 6.2 height of the 2 sides (photo, description) -- done
-        todo: 6.3 photo -- done
-        todo: 6.4 describe phrase --done
-        todo: 6.5 contact icons -- done
-
-  todo: 7. design articles side responsively -- done
-
-  todo: 8. create the state of the y scroll
-    |
-    todo: 8.1 test the react-intersection-observer
-
-*/
-
+// About Me Sections
 enum SECTIONS {
   ABOUT_ME = 0,
   MY_EXPERIENCE = 1,
@@ -50,8 +22,7 @@ enum SECTIONS {
 
 function App() {
   
-  const sectionsRef = useRef(null!);
-
+  // Storing the state of the scroll ( which aboutME section is in view)
   const { ref: aboutMeRef, inView: aboutMeSectionVisibility } = useInView({threshold: 0.1, initialInView: true});
 
   const { ref: myExperienceRef, inView: myExperienceSectionVisibility} = useInView({threshold: 0.1, initialInView: false});
@@ -62,35 +33,36 @@ function App() {
   
   const { ref: interestsRef, inView: interestesSectionVisibility } = useInView({threshold: 0.1, initialInView: false});
 
-  const scrollYProgress = useRef(SECTIONS.ABOUT_ME);
+  const currentViewedSectionIndex = useRef(SECTIONS.ABOUT_ME);
 
+  // updating the current viewed state
   useEffect(() => {
     if(myExperienceSectionVisibility) {
-      scrollYProgress.current = SECTIONS.MY_EXPERIENCE;
+      currentViewedSectionIndex.current = SECTIONS.MY_EXPERIENCE;
     }
   }, [myExperienceSectionVisibility]);
 
   useEffect(() => {
     if(aboutMeSectionVisibility) {
-      scrollYProgress.current = SECTIONS.ABOUT_ME;
+      currentViewedSectionIndex.current = SECTIONS.ABOUT_ME;
     }
   }, [aboutMeSectionVisibility])
 
   useEffect(() => {
     if(nextPlanSectionVisibility) {
-      scrollYProgress.current = SECTIONS.NEXT_PLAN;
+      currentViewedSectionIndex.current = SECTIONS.NEXT_PLAN;
     }
   }, [nextPlanSectionVisibility])
 
   useEffect(() => {
     if(readingsSectionVisibility) {
-      scrollYProgress.current = SECTIONS.READINGS;
+      currentViewedSectionIndex.current = SECTIONS.READINGS;
     }
   }, [readingsSectionVisibility])
 
   useEffect(() => {
     if(interestesSectionVisibility) {
-      scrollYProgress.current = SECTIONS.INTERESTS;
+      currentViewedSectionIndex.current = SECTIONS.INTERESTS;
     }
   }, [interestesSectionVisibility])
   
@@ -112,7 +84,7 @@ function App() {
             <div className="xsm:basis-[75%] xsm:min-h-40 sm:basis-[75%] md:basis-[50%] flex flex-col xsm:justify-start xsm:items-start md:justify-between">
 
               <div className="basis-[60%] xsm:pt-2 pr-3 overflow-hidden xsm:pl-2">
-                <TopicDescriptionPhrase sectionState={scrollYProgress.current} />
+                <TopicDescriptionPhrase sectionState={currentViewedSectionIndex.current} />
               </div>
 
               <div className="basis-[45%] xsm:pr-2 flex items-end justify-end w-full pb-2">
@@ -126,25 +98,29 @@ function App() {
           {/* separator */}
           <div className="basis-13 overflow-hidden" >
 
-            <animated.div
-              style={{
-                backgroundPosition: "top",
-                backgroundColor: "white"
-              }}
-              className='basis-10 size-full md:pt-14 md:pb-14 flex items-center justify-around md:flex-col md:gap-32 xsm:gap-6 xsm:p-3 md:p-0 xsm:text-sm sm:text-2xl font-handwritten text-4xl'
-            >
+            {/* here I will make an animation in the future -------------------------------- */}
 
-              <div className="creative md:rotate-90">Creative</div>
-              <div className="creative md:rotate-90 ">Productive</div>
-              <div className="creative md:rotate-90 font-classic">Reader</div>
-              <div className="creative md:rotate-90 ">Visioner</div>
+                <animated.div
+                  style={{
+                    backgroundPosition: "top",
+                    backgroundColor: "white"
+                  }}
+                  className='basis-10 size-full md:pt-14 md:pb-14 flex items-center justify-around md:flex-col md:gap-32 xsm:gap-6 xsm:p-3 md:p-0 xsm:text-sm sm:text-2xl font-handwritten text-4xl'
+                >
 
-            </animated.div>
+                  <div className="creative md:rotate-90">Creative</div>
+                  <div className="creative md:rotate-90 ">Productive</div>
+                  <div className="creative md:rotate-90 font-classic">Reader</div>
+                  <div className="creative md:rotate-90 ">Visioner</div>
+
+                </animated.div>
+
+            {/* ------------------------------------------------------------------------------ */}
 
           </div>
 
           {/* sections */}
-          <div ref={sectionsRef} className='bg-secondary scroll-smooth snap-y snap-mandatory basis-[100%] pl-4 pt-4 pt-5 w-full h-full overflow-auto'>
+          <div className='bg-secondary scroll-smooth snap-y snap-mandatory basis-[100%] pl-4 pr-4 pt-5 w-full h-full overflow-auto'>
 
             <div ref={aboutMeRef}  className="h-fit min-h-full snap-center pt-20">
               <AboutMe />
