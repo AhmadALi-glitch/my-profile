@@ -109,9 +109,9 @@ function App() {
               <PersonalPhoto />
             </div>
 
-            <div className="xsm:basis-[75%] sm:basis-[75%] md:basis-[50%] flex flex-col xsm:justify-start xsm:items-start md:justify-between">
+            <div className="xsm:basis-[75%] xsm:min-h-40 sm:basis-[75%] md:basis-[50%] flex flex-col xsm:justify-start xsm:items-start md:justify-between">
 
-              <div className="basis-[60%] xsm:pt-2 pr-3 xsm:pl-2">
+              <div className="basis-[60%] xsm:pt-2 pr-3 overflow-hidden xsm:pl-2">
                 <TopicDescriptionPhrase sectionState={scrollYProgress.current} />
               </div>
 
