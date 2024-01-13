@@ -51,17 +51,16 @@ enum SECTIONS {
 function App() {
   
   const sectionsRef = useRef(null!);
-  const scrollY = useRef(0);
 
-  const { ref: aboutMeRef, inView: aboutMeSectionVisibility, entry: aboutMeSectionEntry } = useInView({threshold: 0.1, initialInView: true});
+  const { ref: aboutMeRef, inView: aboutMeSectionVisibility } = useInView({threshold: 0.1, initialInView: true});
 
-  const { ref: myExperienceRef, inView: myExperienceSectionVisibility, entry: myExperienceSectionEntry } = useInView({threshold: 0.1, initialInView: false});
+  const { ref: myExperienceRef, inView: myExperienceSectionVisibility} = useInView({threshold: 0.1, initialInView: false});
   
-  const { ref: readingsRef, inView: readingsSectionVisibility, entry: readingsSectionEntry } = useInView({threshold: 0.1, initialInView: false});
+  const { ref: readingsRef, inView: readingsSectionVisibility } = useInView({threshold: 0.1, initialInView: false});
   
-  const { ref: nextPlanRef, inView: nextPlanSectionVisibility, entry: nextPlanSectioEntry } = useInView({threshold: 0.1, initialInView: false});
+  const { ref: nextPlanRef, inView: nextPlanSectionVisibility } = useInView({threshold: 0.1, initialInView: false});
   
-  const { ref: interestsRef, inView: interestesSectionVisibility, entry: interestesSectionEntry } = useInView({threshold: 0.1, initialInView: false});
+  const { ref: interestsRef, inView: interestesSectionVisibility } = useInView({threshold: 0.1, initialInView: false});
 
   const scrollYProgress = useRef(SECTIONS.ABOUT_ME);
 

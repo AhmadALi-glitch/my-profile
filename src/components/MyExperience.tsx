@@ -1,55 +1,54 @@
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faFacebook, faFacebookF, faVuejs } from "@fortawesome/free-brands-svg-icons";
+import { faFacebookF, faVuejs } from "@fortawesome/free-brands-svg-icons";
 
-import { useSpring } from "@react-spring/web";
-import { useRef } from "react";
+// import { useSpring } from "@react-spring/web";
+// import { useRef } from "react";
 
-import { animated } from "@react-spring/web";
 
 export default function() {
 
-    const vueProjectsContainer = useRef(null!);
+    // const vueProjectsContainer = useRef(null!);
 
-    const [springs, api] = useSpring( () => ({
-        container: vueProjectsContainer.current,
-        from: {
-            width: '0px',
-            height: '0px',
-            position: 'absolute',
-            top: '0px',
-            left: '0px',
-            display: 'none'
-        },
-    }));
+    // const [springs, api] = useSpring( () => ({
+    //     container: vueProjectsContainer.current,
+    //     from: {
+    //         width: '0px',
+    //         height: '0px',
+    //         position: 'absolute',
+    //         top: '0px',
+    //         left: '0px',
+    //         display: 'none'
+    //     },
+    // }));
 
-    const openProjectsModal = () => {
-        console.log("resizing")
-        api.start({
-            to: {
-                width: '100px',
-                height: '100px',
-                position: 'absolute',
-                top: '1px',
-                left: '1px',
-                display: 'flex'
-            }
-        })
-    }
+    // const openProjectsModal = () => {
+    //     console.log("resizing")
+    //     api.start({
+    //         to: {
+    //             width: '100px',
+    //             height: '100px',
+    //             position: 'absolute',
+    //             top: '1px',
+    //             left: '1px',
+    //             display: 'flex'
+    //         }
+    //     })
+    // }
 
-    const closeProjectModal = () => {
-        console.log("resizing")
-        api.start({
-            to: {
-                width: '1px',
-                height: '1px',
-                position: 'absolute',
-                top: '0px',
-                left: '0px',
-                display: 'none'
-            }
-        })
-    }
+    // const closeProjectModal = () => {
+    //     console.log("resizing")
+    //     api.start({
+    //         to: {
+    //             width: '1px',
+    //             height: '1px',
+    //             position: 'absolute',
+    //             top: '0px',
+    //             left: '0px',
+    //             display: 'none'
+    //         }
+    //     })
+    // }
 
     return (
         <>
