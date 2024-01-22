@@ -36,10 +36,16 @@ export default function() {
                     Expert at css
                 </div>
 
-                <div className="text-2xl pb-20 mt-4 pl-4 flex flex-row items-center" style={{
+                <div className="text-2xl mt-4 pl-4 flex flex-row items-center" style={{
                     borderLeft: '1px solid #eee'
                 }}>
                     gained skills in backend development in restful api using laravel and bit of nodejs
+                </div>
+
+                <div className="text-2xl mt-4 pl-4 flex flex-row items-center" style={{
+                    borderLeft: '1px solid #eee'
+                }}>
+                    UI/UX Experiences
                 </div>
 
             </div>
