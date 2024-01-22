@@ -21,7 +21,7 @@ export default function() {
                         <FontAwesomeIcon className="text-secondary" size="2xs" icon={faCertificate}/> Certificates :
                     </div>
                     
-                    <div className="certificates text-secondary pt-5 font-handwritten xsm:text-xs sm:text-2xl md:text-3xl">
+                    <div className="certificates text-secondary pt-5 font-handwritten xsm:text-2xl sm:text-2xl md:text-3xl">
                         <ul className="list-disc pl-12">
                             <li>
                                 Technical Deiploma At
