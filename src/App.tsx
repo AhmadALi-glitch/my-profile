@@ -8,7 +8,7 @@ import { useInView } from 'react-intersection-observer';
 import { animated } from '@react-spring/web'
 import { useEffect, useRef } from 'react';
 import Readings from './components/Readings';
-import NextPlan from './components/NextPlan';
+// import NextPlan from './components/NextPlan';
 import Interests from './components/Interests';
 
 // About Me Sections
@@ -29,7 +29,7 @@ function App() {
   
   const { ref: readingsRef, inView: readingsSectionVisibility } = useInView({threshold: 0.1, initialInView: false});
   
-  const { ref: nextPlanRef, inView: nextPlanSectionVisibility } = useInView({threshold: 0.1, initialInView: false});
+  // const { ref: nextPlanRef, inView: nextPlanSectionVisibility } = useInView({threshold: 0.1, initialInView: false});
   
   const { ref: interestsRef, inView: interestesSectionVisibility } = useInView({threshold: 0.1, initialInView: false});
 
@@ -48,11 +48,11 @@ function App() {
     }
   }, [aboutMeSectionVisibility])
 
-  useEffect(() => {
-    if(nextPlanSectionVisibility) {
-      currentViewedSectionIndex.current = SECTIONS.NEXT_PLAN;
-    }
-  }, [nextPlanSectionVisibility])
+  // useEffect(() => {
+  //   if(nextPlanSectionVisibility) {
+  //     currentViewedSectionIndex.current = SECTIONS.NEXT_PLAN;
+  //   }
+  // }, [nextPlanSectionVisibility])
 
   useEffect(() => {
     if(readingsSectionVisibility) {
@@ -132,10 +132,6 @@ function App() {
 
             <div ref={readingsRef} className='h-fit snap-center min-h-full  pt-20'>
               <Readings />
-            </div>
-
-            <div ref={nextPlanRef} className='h-fit snap-center min-h-full  pt-20'>
-              <NextPlan />
             </div>
 
             <div ref={interestsRef} className='h-fit snap-center min-h-full pt-20'>

@@ -10,7 +10,7 @@ export default function() {
 
             <h1 className="text-secondary font-handwritten xsm:text-4xl sm:text-5xl md:text-8xl">bit about me:</h1>
 
-            <div className="text-secondary pt-5 font-handwritten xsm:text-2xl sm:text-3xl md:text-4xl">I Started learning programming since 2020 .. since then I'm using javascript.. I Enjoy spending time with family, friends and also the keyborad.. and i Can talk well in english </div>
+            <div className="text-secondary pt-5 font-handwritten xsm:text-2xl sm:text-3xl md:text-4xl">I Started learning programming since 2021 .. since then I'm using javascript..  I Live In Syria Tartus/Baniyas ,, I Enjoy spending time with family, friends and also the keyborad.. and i Can talk well in english .</div>
 
             <div className="text-4xl pb-12  text-secondary font-handwritten">
 
