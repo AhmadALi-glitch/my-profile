@@ -11,7 +11,7 @@ export default function() {
         'agile' : ['working on erp systems', 'Pos, billing applications'],
         'js/ts': ['creating typed frontend applications', 'deep knowledge in javascript and its implementaion details'],
         'vue' : ['managing hundreds of sfc in vuejs', 'worked with popular ui libraries like quasar'],
-        'css' : ['autent in creating complex shapes and ui', 'experienced with tailwind'],
+        'css' : ['expert at creating complex shapes and ui', 'experienced with tailwind'],
         'backend': ['designing small-medium size databses', 'creating restful api\'s using expressjs framework', 'using ORM like prisma', 'deploying applications and databases', 'basic experience in graphql', 'basic experience in using linux '],
         'ui': ['it is a hobby'],
         'git': ['managing large codebases on git servers', 'branching, solving conflicts, stashing, configurations,ssh authentication']
