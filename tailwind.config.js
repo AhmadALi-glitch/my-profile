@@ -9,12 +9,20 @@ export default {
     },
     colors: {
       'primary': '#37371F',
-      'secondary': '#F7F9F9'
+      'secondary': '#F7F9F9',
+      'overflow': '#333'
     },
     backgroundColor: {
       'primary': '#F1E8B8',
       'secondary': '#00a676',
-      'side': '#eee'
+      'side': '#eee',
+      'overflow': '#333'
+    },
+    borderColor: {
+      'primary': '#F1E8B8',
+      'secondary': '#00a676',
+      'side': '#eee',
+      'overflow': '#333'
     },
     boxShadow: {
       'flat': 'rgba(0, 0, 0, 0.1) 0px 0px 5px 0px, rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;',
@@ -50,7 +58,7 @@ export default {
 
       '2xl': '1536px',
       // => @media (min-width: 1536px) { ... }
-    }
+    },
   },
   plugins: [],
 }
