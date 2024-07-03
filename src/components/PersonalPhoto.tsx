@@ -1,4 +1,4 @@
-import PersonalPhotoUrl from "../assets/PersonalPhoto.jpg";
+import PersonalPhotoUrl from "../assets/PersonalPhoto.png";
 
 export default function() { 
 
